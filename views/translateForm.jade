@@ -1,0 +1,24 @@
+extends layout
+
+block content
+  form#translateForm(role="form")
+
+    .form-group
+      label(for="from-lng") Language to Translate FROM
+      select.form-control#from-lng
+        each language in fromLanguages 
+          option #{language}
+
+    .form-group
+      label(for="to-lng") Language to Translate FROM
+      select.form-control#to-lng
+
+    .form-group
+      label(for="word-input") Enter a word
+      input#word-input.form-control(type="text", name="wordInput")
+
+    .form-group
+      input.btn.btn-primary(type="submit")
+
+block scripts
+  script(src="/javascripts/main.js")
